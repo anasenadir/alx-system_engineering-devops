@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#Write a Bash script that displays:
+# - The content of the current directory
+# - In a list format
+# - Where only the part of the name after the first dash is displayed
+
+files=$(ls)
+
+for file_name in $files;
+do
+    dash="${file_name:1:1}"
+    if [ "$dash" = '-' ];
+    then
+        file_name="${file_name:2}"
+    fi
+    echo $file_name
+done
